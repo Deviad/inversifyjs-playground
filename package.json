@@ -1,0 +1,63 @@
+{
+  "name": "inversify-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "DEBUG=modern-express:* nodemon dist/app.js",
+    "build": "gulp typescript",
+    "watch": "gulp watch",
+    "lint": "tslint -t stylish --project \"tsconfig.json\"",
+    "pretest": "npm run lint",
+    "test": "npm run test-only",
+    "test-only": "jest --coverage",
+    "test:watch": "jest --watch",
+    "clean": "rimraf coverage build tmp"
+  },
+  "author": "Davide Pugliese",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bluebird": "3.5.20",
+    "@types/body-parser": "1.16.8",
+    "@types/debug": "0.0.30",
+    "@types/express": "^4.11.1",
+    "@types/helmet": "0.0.37",
+    "@types/jest": "~22.1.1",
+    "@types/mongodb": "^3.0.5",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^9.4.6",
+    "errorhandler": "^1.5.0",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^4.0.1",
+    "jest": "~22.1.4",
+    "nodemon": "^1.15.1",
+    "rimraf": "~2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "body-parser": "^1.18.2",
+    "circular-json": "^0.5.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.2",
+    "helmet": "3.11.0",
+    "inversify": "^4.10.0",
+    "inversify-binding-decorators": "3.2.0",
+    "inversify-express-utils": "5.2.1",
+    "inversify-logger-middleware": "3.1.0",
+    "mongodb": "^3.0.3",
+    "morgan": "^1.9.0",
+    "open-graph-scraper": "^3.1.5",
+    "path": "^0.12.7",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^5.5.6",
+    "ts-helpers": "^1.1.2"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.ts"
+    ]
+  }
+}

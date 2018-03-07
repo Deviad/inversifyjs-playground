@@ -43,7 +43,7 @@
     "debug": "^3.1.0",
     "express": "^4.16.2",
     "helmet": "3.11.0",
-    "inversify": "^4.10.0",
+    "inversify": "4.10.0",
     "inversify-binding-decorators": "3.2.0",
     "inversify-express-utils": "5.2.1",
     "inversify-logger-middleware": "3.1.0",
@@ -51,9 +51,8 @@
     "morgan": "^1.9.0",
     "open-graph-scraper": "^3.1.5",
     "path": "^0.12.7",
-    "reflect-metadata": "^0.1.12",
-    "rxjs": "^5.5.6",
-    "ts-helpers": "^1.1.2"
+    "reflect-metadata": "0.1.12",
+    "rxjs": "^5.5.6"
   },
   "nyc": {
     "exclude": [

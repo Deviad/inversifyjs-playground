@@ -1,15 +1,15 @@
 import 'reflect-metadata';
-import { Container, injectable, inject } from 'inversify';
-import {IKatana, IShuriken, INinja } from './interfaces';
+import { Container, injectable  } from 'inversify';
+import {IKatana, INinja, IShuriken} from './interfaces';
 @injectable()
-class Katana {
+class Katana implements IKatana {
     public hit(): String {
         return 'cut';
     }
 }
 
 @injectable()
-class Shuriken {
+class Shuriken implements IShuriken {
     public throw(): String {
         return 'hit!';
     }
@@ -17,8 +17,8 @@ class Shuriken {
 
 @injectable()
 class Ninja implements INinja {
-    private _katana: Katana;
-    private _shuriken: Shuriken;
+    private _katana: IKatana;
+    private _shuriken: IShuriken;
 
     public constructor(katana: Katana, shuriken: Shuriken) {
         this._katana = katana;
@@ -28,8 +28,19 @@ class Ninja implements INinja {
     public sneak(): any { return this._shuriken.throw(); }
 }
 
+
 const container: Container = new Container();
-container.bind<INinja>(Ninja).to(Ninja);
-container.bind<Katana>(Katana).to(Katana);
-container.bind<Shuriken>(Shuriken).to(Shuriken);
+container.bind<Ninja>(Ninja).toSelf();
+container.bind<Katana>(Katana).toSelf();
+container.bind<Shuriken>(Shuriken).toSelf();
+
+
+let ninja: any = container.get<Ninja>(Ninja);
+
+console.log(ninja.fight());
+
+
+
+
+
 

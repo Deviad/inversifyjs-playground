@@ -5,16 +5,19 @@
     "types": ["reflect-metadata"],
     "moduleResolution": "node",
     "outDir": "dist",
-    "noImplicitAny": false,
-    "noEmitHelpers": true,
+    "noImplicitAny": true,
+    "noEmitHelpers": false,
     "sourceMap": true,
     "noEmitOnError": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es6"
-    ]
-
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "noResolve": false,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "strictNullChecks": true,
+    "lib": ["es6", "dom"]
   },
   "include": [
     "src/**/*.ts"
